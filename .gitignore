@@ -1,2 +1,4 @@
-*/.venv3
-*checkpoints
+.ipynb_checkpoints/
+.flaskenv/
+__pycache__/
+.venv3/
