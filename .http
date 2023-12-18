@@ -1,0 +1,15 @@
+
+
+POST http://127.0.0.1:5000/process_data
+Content-Type: application/json
+
+{
+  "client_name": "Thanoon",
+  "data": {
+    "TaskID": 123,
+    "SendTime": "2023-01-01T12:10:00",
+    "TaskFileSize": 2048,
+    "TaskOutputFileSize": 512,
+    "TaskFileLength": 3600
+  }
+}

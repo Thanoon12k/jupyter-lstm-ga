@@ -18,7 +18,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.callbacks import EarlyStopping,Callback
 
-df = pd.read_csv('Tasks_DataSet.csv')
+df = pd.read_csv('dataset/Tasks_DataSet.csv')
 
 # Extract features and target
 X = df.drop(columns=['DataCenterID'])
@@ -82,7 +82,7 @@ plt.xlabel('Predicted')
 plt.ylabel('Actual')
 plt.show()
 
-# model.save('lstm89.keras')
+# model.save('models/lstm89.keras')
 
 
 
@@ -111,7 +111,7 @@ def predict_datacenter_id(requested_array,model_name):
     predicted_DC=predicted_class[0]
     return predicted_DC
 requested_array = [0.1, 55, 0, 0, 55]
-predicted_datacenter_id = predict_datacenter_id(requested_array,"lstm89.keras")
+predicted_datacenter_id = predict_datacenter_id(requested_array,"models/lstm89.keras")
 print(f"Predicted DataCenterID: {predicted_datacenter_id}")
 
 # Define the LSTM model
