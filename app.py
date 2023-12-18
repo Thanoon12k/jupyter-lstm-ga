@@ -1,21 +1,16 @@
 from flask import Flask, request, jsonify
 from datetime import datetime
 
+from predict import predict_datacenter_id
+
 app = Flask(__name__)
 
 @app.route('/process_data', methods=['POST'])
 def process_data():
     try:
-        # Get client name from request
         client_name = request.json.get('client_name')
-
-        # Get data from request
         data = request.json.get('data')
-
-        # Process the data (replace this with your processing logic)
         processed_data = process_data_function(data)
-
-        # Return a JSON response
         response = {
             'status': 'success',
             'client_name': client_name,
@@ -37,20 +32,20 @@ def process_data_function(data):
 
     data_array = [
         data["TaskID"],
-        SendTime,
-        nowTime,
         data["TaskFileSize"],
         data["TaskOutputFileSize"],
         data["TaskFileLength"]
         ]
-    # Replace this with your actual processing logic
-    processed_data = {'message': 'Data processed successfully',
+    DataCenterId=predict_datacenter_id(data_array)
+    processed_data = {
                       "TaskID": data["TaskID"],
                       "ArrivalTime": nowTime,
                       "SendTime": SendTime,
                       "TaskFileSize":data["TaskFileSize"],
                       "TaskOutputFileSize":data["TaskOutputFileSize"],
                       "TaskFileLength":data["TaskFileLength"],
+
+                      "Data Center ID ":DataCenterId
                       
                       }
     return processed_data
