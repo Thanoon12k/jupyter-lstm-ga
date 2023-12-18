@@ -1,3 +1,7 @@
+this gen reach 78
+New generation training start. Parameters:
+Units1: 54.806365966796875, Units2: 62.49542236328125, Dropout Rate: 0.08203125, Learning Rate: 0.014921875000000001, Epochs: 94.298095703125, Batch Size: 18.4320068359375
+**********************************
 
 New generation training start. Parameters:
 Units1: 24.025421142578125, Units2: 60.255584716796875, Dropout Rate: 0.193359375, Learning Rate: 0.019562500000000003, Epochs: 80.69976806640625, Batch Size: 54.11285400390625
